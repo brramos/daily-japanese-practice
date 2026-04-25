@@ -6,7 +6,7 @@ description: >
   "give me a sentence to translate", or "nihongo practice". Also triggered
   automatically by the scheduled task.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Daily Japanese Sentence
@@ -57,6 +57,27 @@ If no vocabulary source is found, simply generate an appropriate sentence for th
 - Vary topics daily: school, family, animals, food, weather, hobbies, daily routines, seasons, travel.
 - Never repeat sentences across runs. Vary vocabulary and grammar patterns each day.
 - Each sentence should reinforce at least one grammar point appropriate to the current level.
+
+## iMessage Delivery
+
+After generating the sentence, check if a file exists at `~/.config/daily-japanese-practice/config.json`. If it does, read it and look for an `imessage_recipient` field.
+
+If a recipient is configured, use the iMessage MCP tool (`send_imessage`) to send the sentence to that recipient. Format the iMessage as a clean, readable text message:
+
+```
+おはよう！🇯🇵
+
+今日の文 (Today's sentence):
+山(やま)に 行(い)きます。
+
+💡 Hint: に marks the destination
+
+Level: 小学1年生
+
+Try translating and reply with your answer!
+```
+
+If no config file exists or no recipient is set, skip iMessage delivery and just present the sentence in the Cowork notification as usual.
 
 ## Tone
 

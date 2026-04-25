@@ -4,7 +4,7 @@ A Claude plugin that delivers a daily Japanese sentence translation challenge, p
 
 ## What it does
 
-Each day you receive a Japanese sentence with furigana and a grammar hint. You try to translate it, and Claude checks your answer. The difficulty starts simple (basic hiragana and Grade 1 kanji) and increases each month.
+Each day you receive a Japanese sentence with furigana and a grammar hint — delivered as a Cowork notification and optionally via iMessage. You try to translate it, and Claude checks your answer. The difficulty starts simple (basic hiragana and Grade 1 kanji) and increases each month.
 
 ## Install
 
@@ -27,11 +27,15 @@ If you have the `.plugin` file, open it in Claude and follow the install prompt.
 
 ## Setup
 
-After installing, open Claude and use the **schedule** skill to create a daily scheduled task:
+After installing, say:
 
-> "Schedule my daily Japanese sentence for 8am every day"
+> "Set up my daily Japanese practice"
 
-Claude will set up a recurring task using the `daily-sentence` skill. You can pick whatever time works for you.
+The setup skill will walk you through choosing a delivery time and optionally enabling iMessage delivery. It creates the daily schedule for you automatically.
+
+### iMessage delivery
+
+During setup, you can provide a phone number or Apple ID to receive the daily sentence as an iMessage. This requires the iMessage MCP to be connected in Cowork. The config is saved locally at `~/.config/daily-japanese-practice/config.json`.
 
 ## Optional: Vocabulary tracking
 
